@@ -71,10 +71,9 @@ describe('OtelZ StudyCase', () => {
       cy.get('.button-wrapper > .btn').click();
 
        //Rezervasyon 2. sayfasında fiyat doğrulanır ve "Online Ödeme" seçeneği olduğu kontrol edilir.
-       cy.get(':nth-child(2) > .type > .row > .payment-radio-col > label').click();
+       cy.wait(2000);
        cy.get(':nth-child(7) > .type > .row').should('be.visible');
-       cy.get('.total-price > .price').should('contain','₺ 500');  
-       cy.get(':nth-child(2) > .type > .row > .payment-radio-col > label').click();    
+       cy.get('.total-price > .price').should('contain','₺ 500');      
   });    
   
 });
